@@ -31,6 +31,36 @@ function loadImage(e) {
   }
 }
 
+// send image data to main.js
+function sendImage(e) {
+  e.preventDefault()
+
+  const width = widthInput.value
+  const height = heightInput.value
+  const imgPath = img.files[0].path
+
+  if (!img.files[0]) {
+    alertError('Please upload an image')
+    return
+  }
+  if (width === '' || height === '') {
+    alertError('Please fill in a height and width')
+    return
+  }
+
+  // send ipcRenderer
+  ipcRenderer.send('image:resize', {
+    imgPath, width, height
+  })
+}
+
+// catch image:done event
+ipcRenderer.on('image:done', () => {
+  alertSuccess('Image resized')
+})
+
+// HELPER FUNCITONS
+
 // Check if image is right type
 function isImageType(image) {
   const validTypes = ['image/jpeg', 'image/png', 'image/gif']
@@ -63,5 +93,5 @@ function alertSuccess(message) {
   })
 }
 
-
 img.addEventListener('change', loadImage)
+form.addEventListener('submit', sendImage)
