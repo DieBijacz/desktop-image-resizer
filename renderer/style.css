@@ -357,6 +357,13 @@ Make sure disabled buttons don't get the pointer cursor.
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 
+#image-view-container {
+  margin: 1rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 img,
 svg,
 video,

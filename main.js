@@ -9,7 +9,7 @@ function createMainWindow() {
   const mainWindow = new BrowserWindow({
     title: 'Image Resizer',
     width: isDevelopment ? 1000 : 500,
-    height: 500
+    height: 1000
   })
 
   // Open dev tools

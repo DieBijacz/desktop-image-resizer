@@ -16,6 +16,11 @@
 
 <body class="bg-teal-700">
   <div class="max-w-xl m-auto h-screen flex flex-col align-center justify-center">
+
+    <div id="image-view-container" class="rounded-lg">
+      <img src="" alt="image-view" id="image-view" class="hidden shadow-lg">
+    </div>
+
     <div class="flex flex-col w-full items-center justify-center bg-grey-lighter">
       <label
         class="w-64 flex flex-col items-center px-4 py-7 bg-white text-gray-500 rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:text-teal-800">
@@ -24,6 +29,7 @@
         <input id="img" type="file" class="hidden" />
       </label>
     </div>
+
 
     <form id="img-form" class="hidden">
       <div class="mt-6">
